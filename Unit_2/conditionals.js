@@ -15,7 +15,7 @@
 
 /* 
     ? Conditionals
-    - Our way to as JS a question and get an answer value as a response.
+    - Our way to ask JS a question and get an answer value as a response.
     - Evaluates an expression and responds if it is true.
     - Falsy
         - false
