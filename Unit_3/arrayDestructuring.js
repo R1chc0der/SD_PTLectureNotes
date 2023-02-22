@@ -88,3 +88,80 @@ persons.push({name: "Anna", age: 29});
 console.log("Persons Array: ", persons); // Includes anna object in array
 
 console.log("Copied Persons Array: ", copiedPersons); // Copy does not include anna, created before anna was added
+
+// * Variables within Memory
+// * First assignment/original assignment
+let x = 10;
+let y = "abc";
+let z = null;
+
+// Reassign to another variable
+let a = x;
+console.log(a);
+let b = y;      // 10
+console.log(b); //abc
+
+// Reassign a and b 
+a = 5;
+b = "def";
+
+console.log(x, y, a, b); // 10, abc, 5, def
+
+// -------------
+
+let arr = [];
+arr.push(1);
+console.log(`arr: ${arr}`);
+
+let reference = [1];
+let refCopy = reference;
+console.log(`refCopy: ${refCopy}`);
+
+reference.push(2);  // both reference and refCopy will have the 2 added
+console.log(reference, refCopy); // [1, 2] [1, 2]
+
+// Look up what the heck is happening
+refCopy.push(3);
+console.log(reference, refCopy);
+
+// --------------------------------------
+// ? Rest Syntax
+
+/* 
+  - Looks exactly like spread syntax: ...
+  - Spread -> "expands" an array
+  - Rest   -> "condenses" an array"
+
+  We can use the spread operator syntax, referred to as 'rest' syntax when working with array destructuring, to package up the REST of the values in the referenced array, and return them as their own array.
+
+
+*/
+
+const fullNameAgain = [
+  "Jane",
+  "Doe",
+  "Mrs.",
+  {
+    month: 03,
+    date: 22,
+    year: 1973,
+  },
+  2,
+  "test",
+  "4",
+  true,
+  false,
+];
+
+let janesName = fullNameAgain[0];
+//console.log(janesName); // jane
+
+//Using both array destructuring and rest:
+let [newFirstName, newLastName, , ...otherInfo] = fullNameAgain;
+console.log(`newFirstName: ${newFirstName}`); // Jane
+console.log(`newFirstName: ${newLastName}`); // Doe
+console.log(`newFirstName: ${otherInfo}`); // [object Object],2, test, 4, true, false
+console.log(otherInfo); // [{ month: 3, date: 22, year 1973 }, 2, "test", "4", true, false]
+
+
+
