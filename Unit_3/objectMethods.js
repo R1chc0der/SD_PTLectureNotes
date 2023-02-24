@@ -87,7 +87,7 @@ console.log("Keys: ", Object.keys(theSimpsons))
 
 
 //* Object.values(),
-console.log("Values: ", Object.values(theSimpsons))
+console.log("Values line 90: ", Object.values(theSimpsons))
 
 // * Object.create(), uses an existing object to frame out a new object, we use a variable to store the base of the object creation
 

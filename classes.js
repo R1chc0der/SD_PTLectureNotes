@@ -58,7 +58,7 @@ console.log(one);
 let itemZero = new Item();
 console.log(itemZero);// returns an object with the Item key that hold undefined values 
 
-let itemOne = new Item("beans", "caneed", 0.99);
+let itemOne = new Item("beans", "caned", 0.99);
 console.log(itemOne);
 
 itemOne.name = "spinach";
