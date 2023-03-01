@@ -7,7 +7,7 @@
     - Polymorphism of behavior (can act/do many things in it's many forms)
 */
 
-//* Encapsulation
+//*   
 // Allows us to have a set of data within an object stored as a property.
 
 class Pet {
