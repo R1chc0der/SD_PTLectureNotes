@@ -161,19 +161,4 @@ console.log(anotherItemToSell);
 // anotherItemToSell.addUpchargeForProfit(3); TypeError: anotherItemToSell.addUpchargeForProfit is not a function
 
 // Note: that anything that is static will not be inherited into those new objects. For our itemToSell and anotherItem, we won't have access to the addUpchargeForProfit method.
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
 
