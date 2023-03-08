@@ -1,3 +1,9 @@
+# Built-in / Inherent Events
+These are events that are tied/a part of elements within our HTML:
+- Forms 
+- Buttons 
+- a / Anchor 
+
 # Forms
 - ```<form>``` groups input fields together
 - ```onsubmit``` will gather data within the input fields and pass it on.
@@ -9,12 +15,6 @@
         - DELETE ()
     - Part of HTTP structure in how e pass data (Will learn about in unit 5 and 6 )
     - When a from is submitted, it automatically refreshes our browser.    
-
-
-
-
-
-
 
 ## Some Attributes
 -```for``` helps tie labels with the input fields
@@ -28,3 +28,11 @@ fields
     into it/interacts with it.
     submitted
         - This get populated when a user types into it/interacts with it.
+
+        ## Steps for DOM Manipulation
+- **Create** the element.
+- **Assign** any values to properties.
+  - Provide text, class names, id names, etc.
+- **Append** to a parent element.
+
+*Note:* If an element already exists, we might only need to *assign* (reassign) it a new value to update it.
