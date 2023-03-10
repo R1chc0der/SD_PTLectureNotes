@@ -108,17 +108,21 @@ const listGames = (system) => {
   // Build a traffic light state machine:
   // create a state object with light color keys with values of an array to the other light color options
   
+    
   let state = {
     green: ["yellow"],
     yellow: ["red"],
     red: ["green", "yield"],
     yield: ["red"],
   };
-  
+
   let currentState = "green";
+  //let currentState = state.red[0];
+  console.log(currentState);
   
+
   // Create a function to handle and transition between states
-  function enterState(newState) {
+function enterState(newState) {
     // Create a check to see what values are valid and available
   
     // Establish which point in our state object that we want to reference
