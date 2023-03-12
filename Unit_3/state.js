@@ -116,6 +116,8 @@ const listGames = (system) => {
     yield: ["red"],
   };
 
+  
+
   let currentState = "green";
   //let currentState = state.red[0];
   console.log(currentState);
@@ -125,6 +127,7 @@ const listGames = (system) => {
 function enterState(newState) {
     // Create a check to see what values are valid and available
   
+                      
     // Establish which point in our state object that we want to reference
     let validTransitions = state[currentState];
   
