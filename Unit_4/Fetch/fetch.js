@@ -50,7 +50,7 @@
         - The location of data (URL) we are trying to obtain
     - Handles both the request and response
     - Returns a Promise
-        - Allow sus to access our resolvers(chain .then() or  .catch()  )
+        - Allow us to access our resolvers(chain .then() or  .catch()  )
         - Resolvers = okay, got the thing (or did not ), hey code now perform this next action    
 
         https://developer.mozilla.org/en-US/docs/Web/API/fetch
