@@ -5,7 +5,7 @@
 
     3 States:
         - Pending,... in the process of getting the result
-        - Fulfilled,... yay we successfully got the result
+        - Fulfilled/Resolved,... yay we successfully got the result
         - Rejected,...boo we were not able to get the result
 
     - Always returns an object {}

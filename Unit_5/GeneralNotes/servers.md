@@ -44,6 +44,8 @@ This allows us to create our own routes and endpoints to perform CRUD functional
 
 - To install Express we run the command: `npm i express`
 - Node Package Manager(npm) install(i) express
+- Brings in our node_modules and package-lock.json
+
 
 3. We will create a file within our project (the traditional way in VSC) titled: `.gitignore`
 
