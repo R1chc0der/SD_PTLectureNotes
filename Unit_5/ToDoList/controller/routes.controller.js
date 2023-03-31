@@ -192,4 +192,54 @@ router.put("/:id", (req, res) => {
   }
 });
 
+// TODO: Delete a task
+/* 
+    - pass ID as a param, convert to a number.
+    - read file
+    - filter to match the param value
+        - return what doesn't match
+    - write to file, fs.writeFile()
+
+*/
+
+
+
+router.delete("/:id", (req, res) => {
+  try{
+    const id = Number(req.params.id);
+    fs.readFile("./helpers/db.json", (err, data) =>{
+      if (err) throw err;
+
+      // Takes the JSON content from the file location, parse it out into a plain array with normal JS objects instead of JSON objects
+      const db = JSON.parse(data);
+
+      // declare a var that holds and does all the sorting/filtering logic.
+      const filteredDB = db.filter((e) => {
+        //we want to check for the id.. and return only what doesn't match
+        if (e.id !== id) {
+          return e;
+        }
+      });
+      fs.writeFile("./helpers/db.json", JSON.stringify(filteredDB), (err) =>
+      (filteredDB), (err) =>     
+      console.log(err)
+      );
+      res.status(200).json({
+        status: `ID: ${id} was successfully deleted.`
+      })
+
+
+    })
+
+  } catch (err){
+    res.status(500).json({
+      error: err.message,
+    });
+  }  
+})
+
+
+
+
+
 module.exports = router;
