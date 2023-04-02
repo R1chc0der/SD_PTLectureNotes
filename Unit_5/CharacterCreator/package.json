@@ -1,19 +1,19 @@
 {
-  "name": "todolist",
+  "name": "charactercreator",
   "version": "1.0.0",
-  "description": "A to do app server.",
+  "description": "DnD Character Creator and DB.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Richard Gibbs",
+  "author": "Rich",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.21"
+    "nodemon": "^2.0.22"
   }
 }
