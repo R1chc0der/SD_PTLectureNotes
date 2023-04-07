@@ -1,9 +1,9 @@
 // We need to call on our package functionality in order to use it
 
-const { request } = require('express');
+const { request } = require("express");
 
 // Create a variable that imports the Router Engine (the functionality and such that lets us build routes) from express.
-const router = require('express').Router();
+const router = require("express").Router();
 
 // Create our first read/GET route
 /* 
@@ -17,10 +17,9 @@ const router = require('express').Router();
 
 */
 
-router.get('/hello-world', (req, res) => {
-    res.send('Hello world');
-
-})
+router.get("/hello-world", (req, res) => {
+  res.send("Hello world");
+});
 
 /*
 !   Challenge
@@ -30,33 +29,31 @@ router.get('/hello-world', (req, res) => {
     - Test: Postman
         * hint: GET should be POST  
 */
-router.post('/greeting', (req, res) => {
-    //Add a status code for us to report any issues/status to the user
-    res.status(200).send('Good Afternoon!');
-
+router.post("/greeting", (req, res) => {
+  //Add a status code for us to report any issues/status to the user
+  res.status(200).send("Good Afternoon!");
 });
 
 // Goal: Write a route that will pull data from JSON
 //http://localhost:4000/practice/json
-router.post("/json",(request, response) =>{
-    // This console log will printed in my VSC terminal that's running the server
-    console.log(request.body);
-    //Make a way to print a response in Postman, we're using destructuring
-    const {name} = request.body;
-    response.status(200).send(`Hello there, ${name}!`)
-
+router.post("/json", (request, response) => {
+  // This console log will printed in my VSC terminal that's running the server
+  console.log(request.body);
+  //Make a way to print a response in Postman, we're using destructuring
+  const { name } = request.body;
+  response.status(200).send(`Hello there, ${name}!`);
 });
 
 // Create a "wild card" route to catch any bad routing, Wildcard endpoint
-router.get("*", (req, res) =>{
-    /* 
+router.get("*", (req, res) => {
+  /* 
         - "*": accounts for a "wild card" or anything that hasn't been defined.
         - Provide a clean response back to the user.
     */
-    res.status(404).send(`<img src="https://http.cat/404" alt="status code 404"/>`)
-
-})
-
+  res
+    .status(404)
+    .send(`<img src="https://http.cat/404" alt="status code 404"/>`);
+});
 
 // Exporting the router, gives the file/functionality to other files, makes the contents accessible in other places.
 module.exports = router;
