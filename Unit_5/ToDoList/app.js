@@ -4,7 +4,7 @@ const express = require("express"); // being pulled form node modules
 const app = express(); // simplify our method calls
 // Create a PORT number to run the app on our local machine
 // Server port w/in localhost. Using "all caps" indicates a "general" variable.
-const PORT = 4000;
+const PORT = 4033;
 
 //------------------------------ Required File Paths --------------------------------
 // Create a variable that imports the practice controller(gives app.js access to it)
@@ -16,12 +16,9 @@ const routes = require("./controller/routes.controller");
 // Require in the index.js from helpers(./helpers) w/ object destructuring
 const { logTime } = require("./helpers");
 
-// create a variable to require in and have CORS dependency accessible 
+// create a variable to require in and have CORS dependency accessible
 
 const cors = require("cors");
-
-
-
 
 // ---------------------- App Functionality/ What it does next -------------------
 //Telling the express app to first use this middleware function
