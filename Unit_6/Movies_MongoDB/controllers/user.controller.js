@@ -117,3 +117,11 @@ router.post("/login", async (req, res) => {
 });
 
 module.exports = router;
+
+/* 
+  https://docs.google.com/drawings/d/1EcMlkNwL4aWq37QQlmbZyd22b1Nn-aBOw3p6hwxgqAs/edit?usp=sharing
+
+  https://docs.google.com/drawings/d/1UKU21i_mRQo_lwUip737WV5W_NtmU4UxUf_4VrpGd-o/edit?usp=sharing
+
+
+*/
