@@ -47,9 +47,24 @@ router.post("/", async (req, res) => {
         
         Hint: Consider login within user.controller.js
 */
-
+// http://localhost:4000/movies/643c6559cb1e3eca71d9a1de
 router.get("/:id", async (req, res) => {
   try {
+    // grab parameters from url
+    const { id } = req.params;
+
+    // Find the document(movie JSON obj) with in the DB collection
+    const getMovie = await Movie.findOne({ _id: id });
+
+    // Response message: use a ternary to make a fancy response
+    getMovie
+      ? res.status(200).json({
+          msg: `${getMovie.title} was found!`,
+          getMovie,
+        })
+      : res.status(404).json({
+          message: "No movie found.",
+        });
   } catch (err) {
     errorResponse(res, err);
   }
@@ -66,9 +81,21 @@ router.get("/:id", async (req, res) => {
         
         Hint: parameters within method are optional
 */
-
+// http://localhost:4000/movies/
 router.get("/", async (req, res) => {
   try {
+    // This endpoint will only return all movies, no req or params needed
+    // Await all documents from the Movie collection
+    const getAllMovies = await Movie.find();
+
+    getAllMovies
+      ? res.status(200).json({
+          message: "All movies from movie collection:",
+          getAllMovies,
+        })
+      : res.status(404).json({
+          message: `No movies found.`,
+        });
   } catch (err) {
     errorResponse(res, err);
   }
@@ -87,13 +114,87 @@ router.get("/", async (req, res) => {
 
 router.get("/genre/:genre", async (req, res) => {
   try {
+    // Grab genre value from parameters
+    const { genre } = req.params;
+    //let buildWord;
+
+    // Trying to spell genres the same way...
+    // if (genre) {
+    //   for (let i = 0; i < genre.length; i++) {
+    //     i === 0
+    //       ? (buildWord = genre[i].toUpperCase())
+    //       : (buildWord += genre[i].toLowerCase());
+    //   }
+    // }
+
+    // Finding all movies in DB whose genre matches the params ({db genre key : req.params.genre })
+    // { genre: buildWord }
+    const getMovies = await Movie.find({ genre: genre });
+
+    getMovies.length > 0
+      ? res.status(200).json({
+          getMovies,
+        })
+      : res.status(404).json({
+          message: `No movies found.`,
+        });
   } catch (err) {
     errorResponse(res, err);
   }
 });
 
 // TODO PATCH One
+// http://localhost:4000/movies/643c7dd92846c6ae32e80467
+router.patch("/:id", async (req, res) => {
+  try {
+    //1. Pull value from parameter
+    const { id } = req.params;
+
+    //2. Pull data from the body.
+    const info = req.body;
+
+    //3. Use method .findOneAndUpdate() to locate document based off ID and pass in new information.
+    const returnOption = { new: true };
+
+    //* findOneAndUpdate(query/filter, document, options)
+    // returnOptions allows us to view the updated document
+    const updatedMovie = await Movie.findOneAndUpdate(
+      { _id: id },
+      info,
+      returnOption
+    );
+
+    //4. Respond to client.
+    res.status(200).json({
+      message: `${updatedMovie.title} has been updated successfully!`,
+      updatedMovie,
+    });
+  } catch (err) {
+    errorResponse(res, err);
+  }
+});
 
 // TODO Delete One
+// http://localhost:4000/movies/643c7dd92846c6ae32e80467
+router.delete("/:id", async (req, res) => {
+  try {
+    //1. Capture ID
+    const { id } = req.params;
+
+    //2. Use delete method to locate and remove based off ID
+    const deleteMovie = await Movie.deleteOne({ _id: id });
+
+    //3. Respond to Client, with a ternary for a ? if true do this : false do this
+    deleteMovie.deletedCount
+      ? res.status(200).json({
+          message: "Movie deleted from database.",
+        })
+      : res.status(404).json({
+          message: "No movie in the collection was found.",
+        });
+  } catch (err) {
+    errorResponse(res, err);
+  }
+});
 
 module.exports = router;
