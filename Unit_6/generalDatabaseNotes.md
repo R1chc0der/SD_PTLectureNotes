@@ -284,3 +284,10 @@ Validate Session is a middleware process that helps us (the sever/devs) verify i
 > - Ex use case: This could make a site readable (GET routes), but not post-able/full CRUD unless a user is logged in... Could help define roles like a user vs an admin user's abilities... Etc.
 
 5. Update all endpoints that need to tie together the two documents (Ex. User and Movie)
+
+warning: in the working copy of 'unit-5/ToDo-list/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unit-5/ToDo-list/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unit-5/cookies/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unit-5/cookies/package.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unit-6/Movies_MongoDB/package-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'unit-6/Movies_MongoDB/package.json', LF will be replaced by CRLF the next time Git touches it
