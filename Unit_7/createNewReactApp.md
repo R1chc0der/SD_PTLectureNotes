@@ -14,7 +14,7 @@ to spin up and create the base React application.
 
 - In the Terminal, within the project folder(starting-react), **run npm start**
 - Project runs like nodemon . When something is updated, it will render our changes to the page.
-- Automatically runs on Port 3000: This should be considered whenever building along with a backend.
+  - Automatically runs on Port 3000: This should be considered whenever building along with a backend.
 
 ## Boilerplate Folders/Files
 
@@ -92,7 +92,8 @@ We will be creating a `components` folder **within** the `src` folder to hold al
 > Side note: Since version 17 was released, it is no longer required to import React into each component. Does as so: import React from 'react'.
 >
 > There are cases when we might need to when trying to gain access to other dependencies within React. Overall, it is **not needed** and in tutorials that are older please ignore when they advise you to do that.
-> <br>
+
+<br>
 
 ### Footer.jsx
 
@@ -100,14 +101,18 @@ We will be creating a `components` folder **within** the `src` folder to hold al
   - Create a file called: `Footer.jsx.`
 - Be sure to check for and do you exports and imports.
 
-<br>### AboutMe.jsx
+<br>
+
+### AboutMe.jsx
 
 - Create a folder called `aboutMe` within the components folder.
   - Create a file called: `AboutMe.jsx.`
 - Be sure to check for and do you exports and imports.
 
 <br>
-### Styling 
+
+### Styling
+
 - We can inject CSS properties inline just like in HTML; however, we must know that we are always writing in JavaScript. This means that our syntax will be a little different.
 - React helps us cross the bridge without doing all these connection points.
 - Ex:

@@ -29,7 +29,8 @@ What we will be focusing on learning:
 > Ex: Think of the Bootstrap <CardDeck > and <Card > elements, those can be reused over and over either statically (pasted 10x's in HTML) or dynamically (using DOM manipulation in JS).
 >
 > <br>
-> <br>
+
+<br>
 
 ## JSX
 
@@ -37,7 +38,9 @@ JSX is JavaScript syntax that returns HTML.
 
 - It's basically a way for us to write both JS and HTML in tandem with one another in the same file.
 
-We can inject JS directly into our JSX. - This helps us create a lot of dynamic and flexible aspects within our builds (how the components are mounted/rendered, how to the logic applies to them, it honestly is endless coding power).
+We can inject JS directly into our JSX.
+
+- This helps us create a lot of dynamic and flexible aspects within our builds (how the components are mounted/rendered, how to the logic applies to them, it honestly is endless coding power).
 
 ### **Rules of JSX**
 
