@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import AboutMe from "./components/aboutMe/AboutMe";
+import Employees from "./components/employeeInformation/Employees";
 
 // This is a Functional Component? it is declared with the function keyword, the name of the function is the component name(Capitalized/PascalCase)
 function App() {
@@ -13,8 +14,9 @@ function App() {
     <div className="App">
       {/* To use an imported component: it gets written/called as a self closing tag */}
       <Header />
-      {<AboutMe />}
-      {<Footer />}
+      <AboutMe />
+      <Employees />
+      <Footer />
     </div>
   );
 }
