@@ -155,7 +155,7 @@ router.get("/genre/:genre", async (req, res) => {
 router.patch("/:id", validateSession, async (req, res) => {
   try {
     //1. Pull value from parameter
-    // const { id } = req.params;
+    //const { id } = req.params;
     // create a filter to check both id from req.params and owner_id against id from token
     const filter = { _id: req.params.id, owner_id: req.user._id };
 
