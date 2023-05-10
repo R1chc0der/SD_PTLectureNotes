@@ -50,8 +50,9 @@ We don't have to necessarily delete any files, but to clean up the unused boiler
   - _App.test.js_ & _setupTest.js_, these handle all of our testing code that we may build. Because we are not going to run testing with this project, we don't need them.
   - _logo.svg_, this is the a svg versioning of the React logo.
 
-  - In the `App.css` file:
-    - Clear out the boilerplate code
+- In the `App.css` file:
+
+  - Clear out the boilerplate code
 
 - In the `README.md` file:
   - Eventually you will want to replace the React content on the ReadMe with information specific to your application.
