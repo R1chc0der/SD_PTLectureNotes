@@ -1,5 +1,6 @@
 // Connects our .env file to our project
 require("dotenv").config();
+
 const express = require("express");
 const app = express();
 // Points to our environment file and puts the value of PORT from that variable into this PORT variable.
@@ -13,6 +14,8 @@ const movies = require("./controllers/movie.controller");
 // ----------------------Middleware:--------------------------------
 //we the services of the validate-session file
 const validateSession = require("./middleware/validate-session");
+//Adding cors() to handle the preflight request for us (something Postman did for us), this is part of our server middleware required and called in the app.js
+const cors = require("cors");
 
 // Require in the mongoose middleware, pulled/used from node_modules
 const mongoose = require("mongoose");
@@ -38,6 +41,8 @@ db.once("open", () => log(`connected: ${MONGO}`));
 
 // Added to allow us to accept JSON data from the body of our client.
 app.use(express.json());
+// Allowing the app to use cors
+app.use(cors());
 
 // --------------------- Routes to Controllers -----------------------
 // http://localhost:4000/user
