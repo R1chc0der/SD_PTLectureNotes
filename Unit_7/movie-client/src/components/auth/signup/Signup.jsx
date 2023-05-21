@@ -1,9 +1,10 @@
 // To use and access Reactstrap components, we need to import them:
 import { Form, FormGroup, Input, Label, Button } from "reactstrap";
-//import { useState } from "react"; you can also import { useRef,useState } from "react";
-import { useRef } from "react";
+import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import FullButton from "../../buttons/FullButton";
 
-export default function Signup() {
+export default function Signup({ updateToken }) {
   // useState() to capture our firstName value and be able to update it with setFirstName(<--state function)
   // const [ firstName, setFirstName ] = useState(''); // Updating to use useRef() instead
 
@@ -12,6 +13,9 @@ export default function Signup() {
   const lastNameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
+
+  // Declare and init navigate variable to hold useNavigate functionality
+  const navigate = useNavigate();
 
   // We need to build out the handle submit function! Made async to handle awaiting the fetch.
   async function handleSubmit(e) {
@@ -55,7 +59,15 @@ export default function Signup() {
       // Build an async fetch, fetch will use the url and requestOptions obj
       const response = await fetch(url, requestOptions);
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
+
+      // If the server send a success message we can update token and route to movie, if not we will get an alert
+      if (data.message === "Success! User Created!") {
+        updateToken(data.token);
+        navigate("/movie");
+      } else {
+        alert(data.message);
+      }
     } catch (err) {
       console.error(err.message);
     }
@@ -81,7 +93,9 @@ export default function Signup() {
           <Label>Password</Label>
           <Input innerRef={passwordRef} type="password" autoComplete={"off"} />
         </FormGroup>
-        <Button type="submit">Signup</Button>
+        <FullButton>
+          <Button type="submit">Signup</Button>
+        </FullButton>
       </Form>
     </>
   );

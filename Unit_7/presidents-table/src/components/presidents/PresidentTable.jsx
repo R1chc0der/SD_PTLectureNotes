@@ -2,6 +2,7 @@
 import PresidentRow from "./PresidentRow";
 
 export default function PresidentTable(props) {
+  console.log("This is the data type ", typeof props);
   return (
     <>
       <h2>{props.title}</h2>
